@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class EjercicioClase3 {
     public static void main(String[] args) {
         /*
@@ -42,7 +44,7 @@ public class EjercicioClase3 {
         }
         for (String productos : listaProductos){
             System.out.println("El catalogo cuenta con: " + productos);
-        }*/
+
 
 
         //Ejercicio 3 Manipulacion de cadenas
@@ -58,9 +60,24 @@ public class EjercicioClase3 {
 
         for (String producto : productos) {
             System.out.println("Los productos en el catálogo son: " + producto);
-        }
+        }}*/
         //si se intenta agregas un producto mas a la lista resultara en error ya que el array no permite ser modificado  luego de su asignacion de valores.
 
+        //Ejercicio 3 Arraylist
+        ArrayList<String> productos = new ArrayList<>();
+        productos.add("Café Tostado Brasil");
+        productos.add("Café Tostado Perú");
+        productos.add("Té Verde Orgánico");
+        productos.add("Té Chai");
+
+        productos.remove(0);
+        System.out.println(productos);
+
+        if (productos.contains("Café Tostado Perú")) {
+            System.out.println("Su producto se encuentra en el catalogo");
+        } else {
+            System.out.println("Su producto no se encuentra en el catálogo");
+        }
 
     }
 }
