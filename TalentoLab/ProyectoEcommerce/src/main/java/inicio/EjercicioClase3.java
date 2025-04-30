@@ -1,3 +1,5 @@
+package inicio;
+
 import java.util.ArrayList;
 
 public class EjercicioClase3 {
@@ -60,7 +62,7 @@ public class EjercicioClase3 {
 
         for (String producto : productos) {
             System.out.println("Los productos en el catálogo son: " + producto);
-        }}*/
+        }}
         //si se intenta agregas un producto mas a la lista resultara en error ya que el array no permite ser modificado  luego de su asignacion de valores.
 
         //Ejercicio 3 Arraylist
@@ -77,8 +79,23 @@ public class EjercicioClase3 {
             System.out.println("Su producto se encuentra en el catalogo");
         } else {
             System.out.println("Su producto no se encuentra en el catálogo");
-        }
+        }*/
 
+        //ejercicio 3 Combinar cadenas y listas
+
+        ArrayList<String> productos = new ArrayList<>();
+        productos.add("Café TOSTAdo bRAsil");
+        productos.add("CAFé TostADO Peru");
+        productos.add("Té VERDE orGanico");
+        productos.add("TE chai");
+
+        for(int i; i < productos.size(), i++){
+            String producto = productos.get(i).toLowerCase();
+            String palabras = producto.split(" ");
+
+        }
     }
+
 }
+
 
