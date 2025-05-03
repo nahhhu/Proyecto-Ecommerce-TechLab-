@@ -89,13 +89,21 @@ public class EjercicioClase3 {
         productos.add("Té VERDE orGanico");
         productos.add("TE chai");
 
-        for(int i; i < productos.size(), i++){
-            String producto = productos.get(i).toLowerCase();
-            String palabras = producto.split(" ");
-
+        for (String producto : productos){
+            String[] palabras = producto.toLowerCase().split(" ");
+            //Stringbuilder permite mayor flexibilidad al momento de modificar cadenas de texto
+            StringBuilder formatear = new StringBuilder();
+            //recorremos cada palabra de la lista de productos
+            for (String palabra : palabras){
+                //si palabra no esta vacia se cumple la condicion
+                if (!palabra.isEmpty()){
+                    formatear.append(Character.toUpperCase(palabra.charAt(0))).append(palabra.substring(1)).append(" ");
+                }
+            }
+            //imprime la palabra formateada, la vuelve string y limpia los espacios
+            System.out.println(formatear.toString().trim());
         }
     }
-
 }
 
 
