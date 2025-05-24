@@ -1,31 +1,37 @@
 package inicio;
 
-import static util.ProductoUtil.aplicarImpuesto;
-import static util.ProductoUtil.calcularPrecioFinal;
-import util.ClienteUtil.*;
+import modelos.Cliente;
+import modelos.Carrito;
+import modelos.Producto;
+import util.ClienteUtil;
+import util.ProductosUtil;
+
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        mostrarValorConImpuesto();
-        mostrarValorConDescuento();
 
-        String mensajeNuevo = ClienteUtil.mostrarMensaje("Nahuel");
-        System.out.println(mensajeNuevo);
+        Cliente nuevoCliente = new Cliente("Nahuel", "nahuel@gmail.com");
+        ClienteUtil.mostrarCliente(nuevoCliente);
 
-        String mensajeRecurrente = ClienteUtil.mostrarMensaje("Matias", 5);
-        System.out.println(mensajeRecurrente);
+
+        ArrayList<Producto> catalogo = new ArrayList<>();
+        Producto cafe = new Producto("Cafe Peruano", 5000, 2);
+        ProductosUtil.aplicarDescuento(cafe, 10);
+        ProductosUtil.calcularImpuesto(cafe, 21);
+
+        Producto cafe1 = new Producto("Cafe Bolivia", 5500, 1);
+        ProductosUtil.aplicarDescuento(cafe1, 10);
+        ProductosUtil.calcularImpuesto(cafe1, 21);
+
+        catalogo.add(cafe);
+        catalogo.add(cafe1);
+
+
+        Carrito pedido1 = new Carrito(nuevoCliente);
+        pedido1.agregarProducto(cafe);
+        pedido1.agregarProducto(cafe1);
+        System.out.println(pedido1.calcularTotal());
+        System.out.println("Cantidad total de productos creados " + Producto.getContadorProductos());
     }
-
-    public static void mostrarValorConImpuesto() {
-        double precioInicial = 100;
-        double precioConImpuesto = aplicarImpuesto(precioInicial, 20);
-        System.out.println("El precio con el impuesto apicado es el siguiente: " + precioConImpuesto);
-    }
-
-    public static void mostrarValorConDescuento(){
-        double precioInicial = 100;
-        double precioConDescuento = calcularPrecioFinal(precioInicial,10,50);
-        System.out.println("El precio de su producto con descuento es: " + precioConDescuento);
-    }
-
 }

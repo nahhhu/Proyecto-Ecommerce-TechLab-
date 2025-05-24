@@ -1,4 +1,4 @@
-package inicio;
+package ejercicios;
 
 import java.util.ArrayList;
 
@@ -107,3 +107,4 @@ public class EjercicioClase3 {
 }
 
 
+//El stringuilder no es un metodo primitivo y permite que los Strings sean mutables, es decir que puedan modificarse.
