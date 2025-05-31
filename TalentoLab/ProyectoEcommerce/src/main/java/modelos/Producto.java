@@ -1,6 +1,6 @@
 package modelos;
 
-public class Producto {
+public abstract class Producto {
 
     private static int contadorProductos;
     private String nombre;
@@ -49,4 +49,6 @@ public class Producto {
             throw new IllegalArgumentException("El stock tiene que ser mayor a 1");
         }
     }
+
+    public abstract double calcularPrecioFinal();
 }
